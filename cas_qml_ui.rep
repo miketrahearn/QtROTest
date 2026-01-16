@@ -1,0 +1,19 @@
+POD TestPod(int bar, double bas)
+
+ENUM FooBar {Foo=1, Bar=3, Bas=5}
+
+class Vehicle {
+    ENUM VehicleType {UNKNOWN=0, TRUCK=1, LightVehicle=2}
+
+    PROP(bool isValid = false SOURCEONLYSETTER)
+    PROP(bool enabled = false READPUSH)
+    PROP(VehicleType vehicleType=VehicleType::UNKNOWN READPUSH)
+    PROP(FooBarEnum::FooBar fooBar = FooBarEnum::Foo READWRITE)
+    PROP(TestPod testPod READWRITE)
+
+    SIGNAL(triggered());
+    SLOT(doTrigger());
+
+    // SLOT definitions create pure virtual functions so
+    // you need to subclass to implement them.
+};
