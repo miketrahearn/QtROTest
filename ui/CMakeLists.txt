@@ -5,11 +5,11 @@ find_package(Qt6 REQUIRED COMPONENTS Quick RemoteObjects)
 qt_standard_project_setup(REQUIRES 6.10)
 
 set(USE_MANUAL_TYPE_REGISTRATION ON)
-set(QML_ARG)
+set(REPC_QML_ARG)
 
 if(NOT ${USE_MANUAL_TYPE_REGISTRATION})
     #use the new QML argument for automatic QML type registration
-    set(QML_ARG QML)
+    set(REPC_QML_ARG QML)
 endif()
 
 # Define the QML Module
@@ -30,7 +30,7 @@ qt_add_qml_module(ui
 set(REP_FILE "${CMAKE_CURRENT_SOURCE_DIR}/../cas_qml_ui.rep")
 
 qt_add_repc_merged(ui
-    ${QML_ARG}
+    ${REPC_QML_ARG}
     SOURCES ${REP_FILE}
 )
 
