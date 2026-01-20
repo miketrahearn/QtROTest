@@ -50,7 +50,14 @@ if(${USE_MANUAL_TYPE_REGISTRATION})
     )
 endif()
 
-target_include_directories(ui PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
+target_include_directories(ui
+    PUBLIC
+        # As well as being able to find any source headers,
+        # Direct mode needs CMAKE_CURRENT_SOURCE_DIR to find QMLTypeRegistration.h
+        ${CMAKE_CURRENT_SOURCE_DIR}
+        # Adding the CMAKE_CURRENT_BINARY_DIR for the generated files
+        ${CMAKE_CURRENT_BINARY_DIR}
+)
 
 target_link_libraries(ui
     PUBLIC
