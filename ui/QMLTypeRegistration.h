@@ -34,3 +34,11 @@ struct TestPodForeign
     QML_VALUE_TYPE(testPod)
     QML_STRUCTURED_VALUE
 };
+
+struct QAbstractItemModelReplicaForeign
+{
+    Q_GADGET
+    QML_FOREIGN(QAbstractItemModelReplica)
+    QML_NAMED_ELEMENT(ItemModelReplica)
+    QML_UNCREATABLE("QAbstractItemModelReplica is Abstract")
+};
