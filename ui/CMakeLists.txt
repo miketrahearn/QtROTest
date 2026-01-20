@@ -36,7 +36,7 @@ qt_add_repc_merged(ui
 
 if(${USE_MANUAL_TYPE_REGISTRATION})
     target_sources(ui
-        PRIVATE
+        PUBLIC
             QMLTypeRegistration.h
     )
 
