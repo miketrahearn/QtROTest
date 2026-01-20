@@ -17,3 +17,11 @@ class Vehicle {
     // SLOT definitions create pure virtual functions so
     // you need to subclass to implement them.
 };
+
+class VehicleService
+{
+    // do not use default values for strings (they aren't generated literal)
+    PROP(QString serviceName SOURCEONLYSETTER)
+    CLASS localObject(Vehicle) // SOURCEONLYSETTER
+    MODEL remoteObjectModel(vehicle) // SOURCEONLYSETTER
+}

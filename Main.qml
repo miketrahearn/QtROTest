@@ -73,6 +73,12 @@ ApplicationWindow {
         node: registryNode
     }
 
+    readonly property alias remoteObjectModel: vehicleServiceInternal.remoteObjectModel
+
+    VehicleServiceReplica {
+        id: vehicleServiceInternal
+    }
+
     VehicleReplica {
         id: vehicle
 

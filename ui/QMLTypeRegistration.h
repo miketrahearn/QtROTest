@@ -15,6 +15,18 @@ struct VehicleForeign
     // QML_UNCREATABLE("Vehicle is a replica and cannot be created directly.")
 };
 
+struct VehicleServiceForeign
+{
+    Q_GADGET
+    QML_FOREIGN(VehicleServiceReplica)
+    QML_NAMED_ELEMENT(VehicleServiceReplica)
+
+    // consider making this uncreatable if we expose through a parent singleton readonly property
+    // or making this a singleton in its own right - but if we keep it uncreatable,
+    // we can still use acquire() properly in C++
+    // QML_UNCREATABLE("Vehicle is a replica and cannot be created directly.")
+};
+
 struct TestPodForeign
 {
     Q_GADGET
