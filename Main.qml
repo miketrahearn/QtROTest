@@ -76,6 +76,7 @@ ApplicationWindow {
 
     VehicleServiceReplica {
         id: vehicleServiceInternal
+        onStateChanged: (state, oldState) => console.log(state, oldState)
     }
 
     VehicleReplica {
@@ -107,6 +108,7 @@ ApplicationWindow {
         onVehicleTypeChanged: console.log("VehicleType:", vehicle.vehicleType)
         onEnabledChanged: console.log("enabled:", vehicle.enabled)
         onTestPodChanged: console.log("async testPod", vehicle.testPod.bar, vehicle.testPod.bas)
+        onStateChanged: console.log("state:", state)
         onTriggered: console.log("triggered")
     }
 }
