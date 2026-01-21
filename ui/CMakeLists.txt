@@ -16,8 +16,8 @@ endif()
 qt_add_qml_module(ui
     URI ui
     VERSION 1.0
-    DEPENDENCIES
-        QtRemoteObjects # required for QML tooling
+    IMPORTS
+        QtRemoteObjects # required for QML tooling and convenience
     STATIC
     SOURCES
         Backend.h
